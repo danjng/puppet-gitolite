@@ -99,6 +99,15 @@ class gitolite (
       order   => '03',
       tag     => 'post-receive',
     }
+    @class { 'sudo':
+      purge               => false,
+      config_file_replace => false,
+      tag                 => 'r10k_env.sh',
+    }
+    @sudo::conf { 'git':
+      content => "git ALL= NOPASSWD:/usr/local/bin/r10k",
+      tag     => 'r10k_env.sh',
+    }
   } else {
     @file {'r10k_env.sh' :
       ensure => absent,

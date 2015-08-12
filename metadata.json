@@ -3,6 +3,7 @@
   "dependencies": [
   	{ "name": "stahnma/epel", "version_requirement": ">= 0.0.6"}
   	{ "name": "puppetlabs/concat", "version_requirement": ">= 1.2.0"}
+  	{ "name": "saz/sudo", "version_requirement": ">= 3.1.0"}
   ],
   "license": "Apache-2.0",
   "name": "jlcox-gitolite",
