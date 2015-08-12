@@ -94,7 +94,7 @@ class gitolite (
       tag    => 'r10k_env.sh',
     }
     @concat::fragment { 'r10k_env.sh':
-      content => "\techo \$oldrev \$newrev \$refname | ./hooks/r10k_env.sh\n",
+      content => "\techo \$oldrev \$newrev \$refname | ./r10k_env.sh\n",
       target  => $hook_concat,
       order   => '03',
       tag     => 'post-receive',
