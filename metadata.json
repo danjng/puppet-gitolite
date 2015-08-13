@@ -1,7 +1,7 @@
 {
   "author": "jlcox1970",
   "dependencies": [
-  	{ "name": "stahnma/epel", "version_requirement": ">= 0.0.6"}
+  	{ "name": "stahnma/epel", "version_requirement": ">= 0.0.6"},
   	{ "name": "puppetlabs/concat", "version_requirement": ">= 1.2.0"}
   	{ "name": "saz/sudo", "version_requirement": ">= 3.1.0"}
   ],
@@ -33,6 +33,6 @@
   "source": "https://github.com/jlcox1970/puppet-gitolite.git",
   "summary": "Installer for gitolite on Centos and RHEL",
   "tags": ["git"],
-  "version": "1.0.3",
+  "version": "1.1.3",
   "issues_url": "https://github.com/jlcox1970/puppet-gitolite/issues"
 }
