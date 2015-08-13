@@ -104,15 +104,6 @@ class gitolite (
       order   => '03',
       tag     => 'post-receive',
     }
-    @class { 'sudo':
-      purge               => false,
-      config_file_replace => false,
-      tag                 => 'r10k_env.sh',
-    }
-    @sudo::conf { 'git':
-      content => "git ALL= NOPASSWD:/usr/local/bin/r10k",
-      tag     => 'r10k_env.sh',
-    }
   } else {
     @file {'r10k_env.sh' :
       ensure => absent,
@@ -182,7 +173,7 @@ class gitolite (
     group   => 'root',
     mode    => '0440',
   } ->
-  concat::fragment { 'post-recceive header':
+  concat::fragment { 'post-receive header':
     target  => $hook_concat,
     content => "#!/bin/bash\n#\n. \$(dirname \$0)/functions\n\nwhile read oldrev newrev refname\ndo\n",
     order   => '01',
@@ -194,7 +185,7 @@ class gitolite (
     }
   }
   Concat::Fragment <| tag == 'post-receive' |>
-  concat::fragment { 'post-recceive footer':
+  concat::fragment { 'post-receive footer':
     target  => $hook_concat,
     content => "done\n: Nothing\n",
     order   => '999',
